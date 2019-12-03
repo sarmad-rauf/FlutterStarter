@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/models/image_model.dart';
+import '../models/image_model.dart';
 
 class ImageList extends StatelessWidget {
   final List<ImageModel> images;
