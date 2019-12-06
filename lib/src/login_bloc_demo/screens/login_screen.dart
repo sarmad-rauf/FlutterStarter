@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../mixins/validation_mixin.dart';
+import '../validators.dart';
+import '../blocs/bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class LoginScreen extends StatefulWidget {
   }
 }
 
-class LoginState extends State<LoginScreen> with ValidationMixin {
+class LoginState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   String email, password;
 
@@ -37,44 +38,49 @@ class LoginState extends State<LoginScreen> with ValidationMixin {
   }
 
   Widget emailField() {
-    return TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-        labelText: 'Email',
-        hintText: 'abc@abc.com',
-      ),
-      validator: validateEmail,
-      onSaved: (String value) {
-        email = value;
+    return StreamBuilder(
+      stream: bloc.email,
+      builder: (context, snapshot) {
+        return TextField(
+          onChanged: bloc.changeEmail,
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            labelText: 'Email',
+            hintText: 'abc@abc.com',
+            errorText: snapshot.error,
+          ),
+        );
       },
     );
   }
 
   Widget passwordField() {
-    return TextFormField(
-      obscureText: true,
-      decoration: InputDecoration(
-        labelText: 'Password',
-        hintText: 'Password',
-      ),
-      validator: validatePassword,
-      onSaved: (String value) {
-        password = value;
+    return StreamBuilder(
+      stream: bloc.password,
+      builder: (context, snapshot) {
+        return TextField(
+          onChanged: bloc.changePassword,
+          obscureText: true,
+          decoration: InputDecoration(
+            labelText: 'Password',
+            hintText: 'Password',
+          ),
+        );
       },
     );
   }
 
   Widget submitButton() {
-    return RaisedButton(
-      onPressed: () {
-        if (formKey.currentState.validate()) {
-          formKey.currentState.save();
-          print('Time to post my $email and $password to API');
-        }
-      },
-      color: Colors.blue,
-      textColor: Colors.white,
-      child: Text('Submit'),
-    );
+    return StreamBuilder(
+        stream: bloc.submitButton,
+        builder: (context, snapshot) {
+          return RaisedButton(
+            onPressed: snapshot.hasError ? null :() {
+            },
+            color: Colors.blue,
+            textColor: Colors.white,
+            child: Text('Submit'),
+          );
+        });
   }
 }
