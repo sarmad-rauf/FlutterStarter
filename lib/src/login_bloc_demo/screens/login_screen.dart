@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../validators.dart';
 import '../blocs/bloc.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -75,8 +74,7 @@ class LoginState extends State<LoginScreen> {
         stream: bloc.submitButton,
         builder: (context, snapshot) {
           return RaisedButton(
-            onPressed: snapshot.hasError ? null :() {
-            },
+            onPressed: snapshot.hasData ? bloc.submit : null,
             color: Colors.blue,
             textColor: Colors.white,
             child: Text('Submit'),
