@@ -30,7 +30,7 @@ void main() {
       return Response(json.encode(jsonMap), 200);
     });
     provider.client = mockClient;
-    final item = await provider.fetchItems(1);
+    final item = await provider.fetchItem(1);
 
     expect(item.id, 123);
   });
