@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../models/model.dart';
+import '../widgets/refresh.dart';
 import '../blocs/stories_provider.dart';
 import '../widgets/news_list_tile.dart';
 
@@ -24,12 +26,14 @@ class HomeScreen extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-        return ListView.builder(
-          itemCount: snapshot.data.length,
-          itemBuilder: (context, index) {
-            bloc.fetchItem(snapshot.data[index]);
-            return NewsListTile(itemId: snapshot.data[index]);
-          },
+        return Refresh(
+          child: ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (context, index) {
+              bloc.fetchItem(snapshot.data[index]);
+              return NewsListTile(itemId: snapshot.data[index]);
+            },
+          ),
         );
       },
     );
