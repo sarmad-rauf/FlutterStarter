@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/provider_demo/appstate.dart';
+import 'package:flutter_app/src/provider_demo/homestate.dart';
 import 'package:provider/provider.dart';
 
 class EditText extends StatefulWidget {
@@ -15,7 +15,7 @@ class EditTestState extends State<EditText> {
 
   @override
   Widget build(BuildContext context) {
-    AppState appState = Provider.of<AppState>(context);
+    HomeState appState = Provider.of<HomeState>(context);
     return Container(
       margin: EdgeInsets.all(16.0),
       child: TextField(
