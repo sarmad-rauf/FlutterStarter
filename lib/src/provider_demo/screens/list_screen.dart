@@ -27,7 +27,12 @@ class ListScreen extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Image.network(user.avatar),
-              Text('${user.firstName} ${user.lastName}'),
+              Text(
+                '${user.firstName} ${user.lastName}',
+                style: TextStyle(
+                  fontSize: 24.0,
+                ),
+              ),
             ],
           ),
         );
