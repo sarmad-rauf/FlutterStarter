@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'screens/animation_screen.dart';
 
 class AnimationApp extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class AnimationApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: AnimationScreen(),
     );
   }
 }

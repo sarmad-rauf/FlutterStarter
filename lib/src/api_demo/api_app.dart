@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/api_demo/blocs/stories_provider.dart';
-import 'screens/home_screen.dart';
+import 'screens/news_screen.dart';
 import 'screens/news_detail.dart';
 
 class ApiApp extends StatelessWidget {
@@ -18,7 +18,7 @@ class ApiApp extends StatelessWidget {
     if (settings.name == "/") {
       return MaterialPageRoute(
         builder: (context) {
-          return HomeScreen();
+          return NewsScreen();
         },
       );
     } else {

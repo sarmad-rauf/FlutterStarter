@@ -74,7 +74,14 @@ class LoginState extends State<LoginScreen> {
         stream: bloc.submitButton,
         builder: (context, snapshot) {
           return RaisedButton(
-            onPressed: snapshot.hasData ? bloc.submit : null,
+            onPressed: () {
+              if (snapshot.hasData) {
+                bloc.submit;
+                Navigator.pushNamed(context, '/dashboard');
+              } else {
+                return null;
+              }
+            },
             color: Colors.blue,
             textColor: Colors.white,
             child: Text('Submit'),

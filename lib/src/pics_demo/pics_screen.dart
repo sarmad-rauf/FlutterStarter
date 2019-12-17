@@ -4,14 +4,14 @@ import 'package:http/http.dart' show get;
 import 'models/image_model.dart';
 import 'widgets/image_list.dart';
 
-class PicApp extends StatefulWidget {
+class PicsScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return AppState();
   }
 }
 
-class AppState extends State<PicApp> {
+class AppState extends State<PicsScreen> {
   int counter = 0;
   List<ImageModel> images = [];
 

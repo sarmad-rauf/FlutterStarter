@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import '../models/model.dart';
 import '../widgets/refresh.dart';
 import '../blocs/stories_provider.dart';
 import '../widgets/news_list_tile.dart';
 
-class HomeScreen extends StatelessWidget {
+class NewsScreen extends StatelessWidget {
+
+  String title = "News";
+
   @override
   Widget build(BuildContext context) {
     final bloc = StoriesProvider.of(context);
     bloc.fetchTopIds();
     return Scaffold(
       appBar: AppBar(
-        title: Text('News'),
+        title: Text(title),
       ),
       body: buildList(bloc),
     );

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../widgets/cat.dart';
 import 'dart:math';
 
-class Home extends StatefulWidget {
+class AnimationScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return HomeState();
+    return AnimationScreenState();
   }
 }
 
-class HomeState extends State<Home> with TickerProviderStateMixin {
+class AnimationScreenState extends State<AnimationScreen> with TickerProviderStateMixin {
   Animation<double> catAnimation;
   AnimationController catController;
   Animation<double> boxAnimation;
