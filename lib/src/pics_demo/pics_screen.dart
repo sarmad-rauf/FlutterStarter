@@ -27,16 +27,14 @@ class AppState extends State<PicsScreen> {
   }
 
   Widget build(context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Let's see some images $counter"),
-        ),
-        body: ImageList(images),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: fetchImage,
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Let's see some images $counter"),
+      ),
+      body: ImageList(images),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: fetchImage,
       ),
     );
   }

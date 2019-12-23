@@ -11,7 +11,14 @@ class NewsDetail extends StatelessWidget {
       appBar: AppBar(
         title: Text('News detail'),
       ),
-      body: Text('$itemId'),
+      body: Center(
+        child: Text(
+          '$itemId',
+          style: TextStyle(
+            fontSize: 24.0,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -63,6 +63,7 @@ class LoginState extends State<LoginScreen> {
           decoration: InputDecoration(
             labelText: 'Password',
             hintText: 'Password',
+            errorText: snapshot.error,
           ),
         );
       },
