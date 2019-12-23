@@ -7,6 +7,7 @@ import 'src/login_bloc_demo/login_bloc_app.dart';
 import 'src/animation_demo/animation_app.dart';
 import 'src/api_demo/api_app.dart';
 import 'package:flutter/rendering.dart';
+import 'src/provider_demo/provider_app.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
@@ -16,4 +17,5 @@ void main() {
 //  runApp(AnimationApp());
 //  runApp(ApiApp());
   runApp(LaunchApp());
+//  runApp(ProviderApp());
 }
