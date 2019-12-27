@@ -32,6 +32,6 @@ void main() {
     provider.client = mockClient;
     final item = await provider.fetchItem(1);
 
-    expect(item.id, 123);
+    expect(item.id, 1234);
   });
 }
