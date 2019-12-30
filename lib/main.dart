@@ -16,6 +16,6 @@ void main() {
 //  runApp(LoginBlocApp());
 //  runApp(AnimationApp());
 //  runApp(ApiApp());
-  runApp(LaunchApp());
-//  runApp(ProviderApp());
+//  runApp(LaunchApp());
+  runApp(ProviderApp());
 }
