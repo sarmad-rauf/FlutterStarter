@@ -22,6 +22,7 @@ void main() {
     final ids = await provider.fetchTopIds();
 
     expect(ids, [1, 2, 3, 4]);
+
   });
 
   test('Fetch item returns a item model', () async {
