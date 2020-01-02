@@ -20,8 +20,7 @@ void main() {
     });
     provider.client = mockClient;
     final ids = await provider.fetchTopIds();
-
-    expect(ids, [1, 2, 3]);
+    expect(ids, [1, 2, 3, 4]);
   });
 
   test('Fetch item returns a item model', () async {
@@ -33,5 +32,4 @@ void main() {
     final item = await provider.fetchItem(1);
     expect(item.id, 123);
   });
-
 }
