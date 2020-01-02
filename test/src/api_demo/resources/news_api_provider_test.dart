@@ -33,5 +33,4 @@ void main() {
     final item = await provider.fetchItem(1);
     expect(item.id, 123);
   });
-
 }
