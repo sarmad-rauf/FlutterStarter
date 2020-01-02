@@ -17,6 +17,5 @@ void main() {
 //  runApp(AnimationApp());
 //  runApp(ApiApp());
 //  runApp(LaunchApp());
-
   runApp(ProviderApp());
 }
