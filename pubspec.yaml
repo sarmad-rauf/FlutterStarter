@@ -28,12 +28,19 @@ dependencies:
   sqflite: ^0.11.0
   path_provider: ^0.4.1
   provider: ^2.0.1
+  retrofit: ^1.0.1+1
+  logger: ^0.8.2
+  json_annotation: ^3.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   test: ^1.5.1
+  retrofit_generator: ^1.0.2+2
+  build_runner: ^1.7.2
+
+  json_serializable: ^3.2.5
 
 
 # For information on the generic Dart part of this file, see the

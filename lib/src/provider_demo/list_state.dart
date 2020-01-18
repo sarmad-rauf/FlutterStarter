@@ -27,3 +27,10 @@ class ListState extends ChangeNotifier {
 
   List<User> get getUsers => _users;
 }
+
+
+class Listener{
+  void notify(){
+
+  }
+}
