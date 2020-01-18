@@ -21,6 +21,5 @@ class UserRepositoryImpl {
     _client = RestClient(dio);
   }
 
-
   void getUsers() {}
 }
