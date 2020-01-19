@@ -15,7 +15,6 @@ pipeline {
                 }
             }
             steps {
-                // Get some code from a GitHub repository
                 git 'https://github.com/RanaRanvijaySingh/FlutterStarter.git'
             }
         }
