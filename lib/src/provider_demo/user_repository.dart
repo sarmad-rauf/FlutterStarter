@@ -22,4 +22,5 @@ class UserRepositoryImpl {
   }
 
   void getUsers() {}
+
 }
