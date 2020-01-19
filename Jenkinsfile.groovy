@@ -4,7 +4,15 @@ pipeline {
     stages {
         stage('Code pull') {
             when {
-                expression { return params.current_status == "closed" && params.merged == true }
+                expression {
+                    String s = "NOT MERGED"
+                    if(params.merged) {
+                        s = "MERGED"
+                    }
+                    echo "PR CURRENT STATUS: ${params.current_status}"
+                    echo "PR MERGED STATUS: $s"
+                    return params.current_status == "closed" && params.merged == true
+                }
             }
             steps {
                 // Get some code from a GitHub repository
